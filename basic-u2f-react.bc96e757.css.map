@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"basic-u2f-react.bc96e757.css","sourceRoot":"..","sourcesContent":[".address {\n  background-color: #eee;\n  color: #222;\n  padding: 0.4em 1.2em;\n  font-size: 1.2em;\n}\n\n.error {\n  color: #c00;\n}\n"]}
