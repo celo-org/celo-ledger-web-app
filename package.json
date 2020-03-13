@@ -1,0 +1,26 @@
+{
+  "name": "@ledgerhq/example-browser",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development parcel index.html --https",
+    "build": "cross-env NODE_ENV=production parcel build index.html --no-minify --public-url /"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@ledgerhq/hw-app-eth": "^4.63.2",
+    "@ledgerhq/hw-transport-webusb": "^5.11",
+    "@ledgerhq/hw-transport-u2f": "^5.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.8.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "parcel-bundler": "^1.12.3"
+  },
+  "private": true,
+  "version": "4.36.0",
+  "homepage": "https://celo-org.github.io/celo-ledger-web-app"
+}
