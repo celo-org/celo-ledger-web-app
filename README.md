@@ -1,21 +1,3 @@
-## basic-u2f-react
+## Celo Ledger web app
 
-Simple example of Ledger u2f transport + React.
-
----
-
-Required: [Node](http://nodejs.org) environment with [yarn](https://yarnpkg.com/).
-
-## Available Scripts
-
-### `yarn`
-
-Install dependencies.
-
-### `yarn start`
-
-Runs the app in the development mode.
-
-### `yarn run build`
-
-Builds the app for production to the `build` folder.
+A web app to derive your address directly from the browser. Supports Chrome, Firefox, Brave and Opera - or any other browser that supports WebUSB or U2F.
