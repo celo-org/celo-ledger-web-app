@@ -20,7 +20,7 @@ class App extends Component {
       } else if (window.u2f) {
         transport = await TransportU2F.create();
       } else {
-        this.setState({ error: new Error('Browser not supported. Use Chrome, Firefox, Brave or Opera.') });
+        this.setState({ error: new Error('Browser not supported. Use Chrome, Firefox, Brave, Opera or Edge.') });
         return;
       }
       const eth = new Eth(transport);
