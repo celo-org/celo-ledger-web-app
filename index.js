@@ -30,6 +30,33 @@ class App extends Component {
       this.setState({ error });
     }
   };
+  onLedgerCeloSendTx = async () => {
+    try {
+      this.setState({ error: null });
+      let transport;
+      if (window.USB) {
+        transport = await TransportUSB.create();
+      } else if (window.u2f) {
+        transport = await TransportU2F.create();
+      } else {
+        this.setState({ error: new Error('Browser not supported. Use Chrome, Firefox, Brave, Opera or Edge.') });
+        return;
+      }
+      const eth = new Eth(transport);
+      const { address } = await eth.signTransaction(
+        "44'/52752'/0'/0/0",
+        this.state.tx,
+      );
+      this.setState({ address });
+    } catch (error) {
+      this.setState({ error });
+    }
+  };
+  handleChange(value) {
+    this.setState({
+      tx: value
+    });
+  }
   render() {
     const { address, error } = this.state;
     return (
@@ -37,6 +64,12 @@ class App extends Component {
         <p>
           <button onClick={this.onGetLedgerCeloAddress}>
             Get Ledger Celo Address
+          </button>
+        </p>
+        <p>
+          <input type="text" value={this.state.tx} onChange={(e) =>this.handleChange(e.target.value)} />
+          <button onClick={this.onLedgerCeloSendTx}>
+            Send Raw Transaction
           </button>
         </p>
         <p>
