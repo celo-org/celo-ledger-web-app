@@ -53,23 +53,30 @@ class App extends Component {
       this.setState({ error });
     }
   };
-  handleChange(value) {
-    this.setState({
-      tx: value
-    });
+  handleChange(type, value) {
+    if (type == 'tx') {
+      this.setState({
+        tx: value
+      });
+    } else if (type == 'addressIndex') {
+      this.setState({
+        addressIndex: value
+      });
+    }
   }
+
   render() {
     const { address, error } = this.state;
     return (
       <div>
         <p>
-          <input type="text" value={this.state.addressIndex} onChange={(e) =>this.handleChange(e.target.value)} />
+          <input type="text" value={this.state.addressIndex} onChange={(e) =>this.handleChange('addressIndex', e.target.value)} />
           <button onClick={this.onGetLedgerCeloAddress}>
             Get Ledger Celo Address
           </button>
         </p>
         <p>
-          <input type="text" value={this.state.tx} onChange={(e) =>this.handleChange(e.target.value)} />
+          <input type="text" value={this.state.tx} onChange={(e) =>this.handleChange('tx', e.target.value)} />
           <button onClick={this.onLedgerCeloSendTx}>
             Send Raw Transaction
           </button>
