@@ -9,6 +9,7 @@ import Eth from "@ledgerhq/hw-app-eth";
 class App extends Component {
   state = {
     address: null,
+    addressIndex: 0,
     error: null
   };
   onGetLedgerCeloAddress = async () => {
@@ -24,7 +25,7 @@ class App extends Component {
         return;
       }
       const eth = new Eth(transport);
-      const { address } = await eth.getAddress("44'/52752'/0'/0/0");
+      const { address } = await eth.getAddress("44'/52752'/0'/0/" + this.state.addressIndex);
       this.setState({ address });
     } catch (error) {
       this.setState({ error });
@@ -62,6 +63,7 @@ class App extends Component {
     return (
       <div>
         <p>
+          <input type="text" value={this.state.addressIndex} onChange={(e) =>this.handleChange(e.target.value)} />
           <button onClick={this.onGetLedgerCeloAddress}>
             Get Ledger Celo Address
           </button>
