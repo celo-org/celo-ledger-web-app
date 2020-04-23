@@ -25,7 +25,7 @@ class App extends Component {
         return;
       }
       const eth = new Eth(transport);
-      const { address } = await eth.getAddress("44'/52752'/0'/0/" + this.state.addressIndex);
+      const { address } = await eth.getAddress("44'/52752'/0'/0/" + this.state.addressIndex, true);
       this.setState({ address });
     } catch (error) {
       this.setState({ error });
