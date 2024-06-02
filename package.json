@@ -10,8 +10,8 @@
     "@ledgerhq/hw-app-eth": "^4.63.2",
     "@ledgerhq/hw-transport-u2f": "^5.11",
     "@ledgerhq/hw-transport-webusb": "^5.11",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.8.3",
